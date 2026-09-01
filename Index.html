@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anish Business Solutions</title>
+
+    <meta name="description"
+        content="Anish Business Solutions provides AI, website development and digital solutions for businesses.">
+
+    <meta name="keywords"
+        content="AI solutions, website development, digital services, business support">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #222;
+        }
+
+        nav {
+            background: white;
+            padding: 18px 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 8px 5px;
+            color: #222;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: blue;
+        }
+
+        /* HERO */
+
+        .hero {
+            background: linear-gradient(135deg, #ffffff, #eef3ff);
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .hero-text {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #e8edff;
+            color: blue;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #111;
+            margin: 10px 0;
+        }
+
+        .hero h2 {
+            color: #444;
+            font-size: 26px;
+            margin: 15px 0;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 20px auto;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .hero-buttons {
+            margin-top: 25px;
+        }
+
+        button {
+            background: blue;
+            color: white;
+            padding: 13px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: red;
+        }
+
+        .hero-buttons button {
+            margin: 6px;
+        }
+
+        .secondary-btn {
+            background: #222;
+        }
+
+        .secondary-btn:hover {
+            background: #555;
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: white;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .about h2,
+        .services h2,
+        .why-us h2,
+        .stats h2,
+        .testimonials h2,
+        .contact h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        .services-container {
+            max-width: 900px;
+            margin: 30px auto 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .service {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.10);
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+        }
+
+        .service h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .service p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .service button {
+            margin-top: 10px;
+        }
+
+        /* WHY US */
+
+        .why-us {
+            background: white;
+            text-align: center;
+        }
+
+        .why-container {
+            max-width: 900px;
+            margin: 30px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .why-card {
+            background: #f4f4f4;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .why-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* STATS */
+
+        .stats {
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        .stats-container {
+            max-width: 900px;
+            margin: 30px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.10);
+        }
+
+        .stat-card h3 {
+            font-size: 36px;
+            color: blue;
+            margin: 0 0 10px;
+        }
+
+        .stat-card p {
+            color: #555;
+            font-size: 17px;
+            margin: 0;
+        }
+
+        /* TESTIMONIALS */
+
+        .testimonials {
+            background: white;
+            text-align: center;
+        }
+
+        .testimonial-container {
+            max-width: 900px;
+            margin: 30px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .testimonial {
+            background: #f4f4f4;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .testimonial p {
+            color: #555;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .testimonial h3 {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: white;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .contact p {
+            color: #555;
+        }
+
+        .contact a {
+            text-decoration: none;
+            display: inline-block;
+            margin: 8px;
+        }
+
+        .contact a button {
+            min-width: 160px;
+        }
+
+        form {
+            margin-top: 30px;
+            background: #f4f4f4;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: blue;
+            box-shadow: 0 0 5px rgba(0,0,255,0.15);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        form button {
+            margin-top: 12px;
+            width: 100%;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            nav a {
+                margin: 0 5px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 60px 15px;
+            }
+
+            .hero-badge {
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .services-container,
+            .why-container,
+            .stats-container,
+            .testimonial-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 45px 15px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#stats">Stats</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <p class="hero-badge">
+                    🚀 AI & Digital Solutions
+                </p>
+
+                <h1>
+                    Anish Business Solutions
+                </h1>
+
+                <h2>
+                    Grow Your Business With AI & Modern Websites
+                </h2>
+
+                <p>
+                    We create modern, fast and mobile-friendly websites
+                    that help businesses build a strong online presence.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button type="button"
+                        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+                        Get Started
+                    </button>
+
+                    <button type="button"
+                        class="secondary-btn"
+                        onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'});">
+                        Our Services
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="about-content">
+
+            <h2>About Us</h2>
+
+            <p>
+                Anish Business Solutions helps businesses grow with
+                modern AI, digital and website development services.
+            </p>
+
+            <p>
+                Our goal is to provide simple, affordable and
+                professional solutions for businesses.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="services" id="services">
+
+        <h2>Our Services</h2>
+
+        <div class="services-container">
+
+            <div class="service">
+
+                <h3>Website Development</h3>
+
+                <p>
+                    We create fast, modern and mobile-friendly
+                    websites for businesses.
+                </p>
+
+                <button type="button"
+                    onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+                    Learn More
+                </button>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>AI Solutions</h3>
+
+                <p>
+                    We use AI tools to help businesses save time
+                    and work smarter.
+                </p>
+
+                <button type="button"
+                    onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+                    Learn More
+                </button>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>Digital Services</h3>
+
+                <p>
+                    We provide simple digital solutions to help
+                    businesses grow online.
+                </p>
+
+                <button type="button"
+                    onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+                    Learn More
+                </button>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>Business Support</h3>
+
+                <p>
+                    We provide practical support for everyday
+                    business tasks and operations.
+                </p>
+
+                <button type="button"
+                    onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+                    Learn More
+                </button>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>Marketing Support</h3>
+
+                <p>
+                    We help businesses improve their online
+                    presence through simple marketing solutions.
+                </p>
+
+                <button type="button"
+                    onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+                    Learn More
+                </button>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>Customer Support</h3>
+
+                <p>
+                    We provide helpful customer support through
+                    phone, email and online communication.
+                </p>
+
+                <button type="button"
+                    onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+                    Learn More
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY US -->
+
+    <section class="why-us" id="why-us">
+
+        <h2>Why Choose Us?</h2>
+
+        <div class="why-container">
+
+            <div class="why-card">
+
+                <h3>Modern Solutions</h3>
+
+                <p>
+                    We use modern AI and digital tools
+                    to create useful business solutions.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <h3>Mobile Friendly</h3>
+
+                <p>
+                    Our websites are designed to work
+                    smoothly on phones, tablets and computers.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <h3>Simple & Affordable</h3>
+
+                <p>
+                    We focus on simple, practical and
+                    affordable solutions for businesses.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="stats" id="stats">
+
+        <h2>Our Numbers</h2>
+
+        <div class="stats-container">
+
+            <div class="stat-card">
+
+                <h3>50+</h3>
+
+                <p>Happy Clients</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>100+</h3>
+
+                <p>Projects Completed</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>24/7</h3>
+
+                <p>Customer Support</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TESTIMONIALS -->
+
+    <section class="testimonials" id="testimonials">
+
+        <h2>What Our Clients Say</h2>
+
+        <div class="testimonial-container">
+
+            <div class="testimonial">
+
+                <p>
+                    "The website looks modern and works very
+                    smoothly on mobile."
+                </p>
+
+                <h3>Demo Client 1</h3>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <p>
+                    "The digital solution helped make our
+                    business work easier."
+                </p>
+
+                <h3>Demo Client 2</h3>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <p>
+                    "Professional service and simple
+                    communication."
+                </p>
+
+                <h3>Demo Client 3</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="contact-content">
+
+            <h2>Contact Us</h2>
+
+            <p>
+                Want a website for your business?
+                Get in touch with us.
+            </p>
+
+            <p>
+                <strong>Phone:</strong> 9279086433
+            </p>
+
+            <p>
+                <strong>Email:</strong> anishsharma638765@gmail.com
+            </p>
+
+
+            <a href="https://wa.me/9279086433" target="_blank">
+
+                <button type="button">
+                    Chat on WhatsApp
+                </button>
+
+            </a>
+
+
+            <a href="tel:9279086433">
+
+                <button type="button">
+                    Call Us
+                </button>
+
+            </a>
+
+
+            <form action="https://formspree.io/f/mbgjrajp" method="POST">
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required>
+
+    <input
+        type="tel"
+        name="phone"
+        placeholder="Your Phone"
+        required>
+
+    <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required>
+
+    <textarea
+        name="message"
+        placeholder="Your Message"
+        rows="5"
+        required></textarea>
+
+    <button type="submit">
+        Send Message
+    </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            AI & Website Development Solutions
+        </p>
+
+        <p>
+            © 2026 Anish Business Solutions.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const form = document.getElementById("contactForm");
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            alert("Thank you! Your message has been received.");
+
+            form.reset();
+
+        });
+
+    </script>
+
+</body>
+
+</html>
